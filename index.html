@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!--必须加上，移动端渲染基准-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岗位能力证书查询系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", "SimHei", sans‑serif;
+        }
+        body {
+            background-color: #f4f7fa;
+            min-height: 100vh;
+        }
+
+        /* ========== 顶部导航栏 响应式稳定版 ========== */
+        .top-nav {
+            background-color: #1a3460;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            gap: 12px;
+        }
+        .nav-title {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap; /*标题禁止换行*/
+        }
+        .nav-links{
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.25s;
+            white-space: nowrap; /*导航文字不换行*/
+        }
+        .nav-links a:hover {
+            color: #b8c8e2;
+        }
+
+        /* -------- 手机端断点 <768px -------- */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 16px 18px;
+            }
+            .nav-links{
+                gap: 20px;
+            }
+            .nav-title{
+                font-size: 20px;
+            }
+        }
+
+        .wrap{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 135px);
+        }
+        .search-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 480px;
+            padding: 45px 35px;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(26, 52, 96, 0.15);
+            border-top:5px solid #1a3460;
+        }
+        h2 {
+            text-align: center;
+            color: #1a3460;
+            margin-bottom: 35px;
+            font-size:24px;
+        }
+        .input-wrap {
+            margin-bottom: 26px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+            font-size:16px;
+        }
+        .input-box{
+            position:relative;
+        }
+        input {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            border: 1px solid #ccd2db;
+            border-radius: 8px;
+            font-size: 16px;
+            transition:0.3s;
+        }
+        input:focus{
+            outline:none;
+            border-color:#1a3460;
+            box-shadow: 0 0 0 3px rgba(26, 52, 96, 0.1);
+        }
+        .clear-btn{
+            position:absolute;
+            right:12px;
+            top:50%;
+            transform:translateY(-50%);
+            color:#999;
+            cursor:pointer;
+            font-size:20px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #1a3460;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #254885;
+        }
+        button:active{
+            transform:scale(0.98);
+        }
+        .tip-warning {
+            margin-top: 22px;
+            font-size: 13px;
+            color: #e64340;
+            text-align: center;
+            line-height:1.6;
+        }
+        .footer{
+            text-align:center;
+            color:#888;
+            font-size:13px;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="top-nav">
+        <div class="nav-title">证书网上查询验证平台</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="#">查询须知</a>
+            <a href="#">关于我们</a>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="search-card">
+            <h2>岗位能力证书查询</h2>
+            <div class="input-wrap">
+                <label>请输入证书编号或身份证号：</label>
+                <div class="input-box">
+                    <input id="certNo" type="text" placeholder="请输入xxx">
+                    <span class="clear-btn" onclick="clearInput()">×</span>
+                </div>
+            </div>
+            <button onclick="searchCert()">立即查询</button>
+            <div class="tip-warning">欢迎登录工业和信息化部工业文化发展中心 证书网上查询验证平台</div>
+        </div>
+    </div>
+    <div class="footer">
+        使用条款|工业和信息化部工业文化发展中心|关于工业和信息化部工业文化发展中心隐私的声明|cookies|开源软件声明
+    </div>
+
+    <script>
+function clearInput(){
+    document.getElementById("certNo").value = '';
+}
+function searchCert(){
+    let inputNo = document.getElementById("certNo").value.trim();
+    if(!inputNo){
+        alert("请输入证书编号！");
+        return;
+    }
+    // 多个有效证书编号，在这里添加新编号，用逗号隔开
+    const validNos = [
+        "CITE00224071607156",
+        "622727200202230835"   // 新增的第二条证书编号
+    ];
+    
+    if(validNos.includes(inputNo)){
+        window.location.href = 'result.html?no='+inputNo;
+    }else{
+        window.location.href = 'notfound.html';
+    }
+}
+
+    </script>
+</body>
+</html>

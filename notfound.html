@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询失败</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        /* 和首页完全一致的顶部导航栏 */
+        .top-nav {
+            background-color: #1a3460;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            gap: 12px;
+        }
+        .nav-title {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .nav-links{
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.25s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover {
+            color: #b8c8e2;
+        }
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 16px 18px;
+            }
+            .nav-links{
+                gap: 20px;
+            }
+            .nav-title{
+                font-size: 20px;
+            }
+        }
+
+        body{
+            min-height: 100vh;
+            display:flex;
+            flex-direction:column;
+            background:#f4f7fa;
+            font-family:Microsoft Yahei;
+        }
+        .main-wrap{
+            flex: 1;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+        }
+        .error-card{
+            background:#fff;
+            padding:50px 40px;
+            border-radius:14px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+            text-align:center;
+            max-width:450px;
+        }
+        .error-icon{
+            font-size:60px;
+            color:#d13030;
+            margin-bottom:15px;
+        }
+        h1{
+            color:#d13030;
+            margin-bottom:20px;
+            font-size:26px;
+        }
+        p{
+            font-size: 18px;
+            color:#555;
+            margin-bottom: 12px;
+            line-height:1.8;
+        }
+        .tips-text{
+            font-size:15px;
+            color:#777;
+            margin-bottom:35px;
+        }
+        a.btn-back{
+            display:inline-block;
+            padding: 13px 30px;
+            background:#1a3460;
+            color:white;
+            text-decoration:none;
+            border-radius: 6px;
+            font-size:17px;
+            transition:0.3s;
+        }
+        a.btn-back:hover{
+            background:#254885;
+        }
+        .footer{
+            margin-top:40px;
+            text-align:center;
+            color:#888;
+            font-size:13px;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 和首页一模一样的导航栏 -->
+    <div class="top-nav">
+        <div class="nav-title">证书网上查询验证平台</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="#">查询须知</a>
+            <a href="#">关于我们</a>
+        </div>
+    </div>
+
+    <div class="main-wrap">
+        <div class="error-card">
+            <div class="error-icon">很抱歉</div>
+            <h1>查无此证书记录</h1>
+            <p>系统未检索到匹配的证书信息</p>
+            <div class="tips-text">请检查证书编号大小写、字符是否输入正确，稍后重试</div>
+            <a href="index.html" class="btn-back">返回重新查询</a>
+        </div>
+        <div class="footer">使用条款|工业和信息化部工业文化发展中心|关于工业和信息化部工业文化发展中心隐私的声明|cookies|开源软件声明</div>
+    </div>
+</body>
+</html>
