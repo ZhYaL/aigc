@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "SimSun", "Microsoft Yahei", serif;
+        }
+        /*统一顶部导航栏，和其他页面完全一致*/
+        .top-nav {
+            background-color: #1a3460;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            gap: 12px;
+        }
+        .nav-title {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .nav-links{
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.25s;
+            white-space: nowrap;
+        }
+        .nav-links a:hover {
+            color: #b8c8e2;
+        }
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                justify-content: center;
+                padding: 16px 18px;
+            }
+            .nav-links{
+                gap: 20px;
+            }
+            .nav-title{
+                font-size: 20px;
+            }
+        }
+
+        body{
+            background-color:#f4f7fa;
+            min-height: 100vh;
+        }
+        .container{
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 50px 40px;
+            border-radius:12px;
+            box-shadow: 0 3px 18px rgba(26, 52, 96, 0.12);
+        }
+        h2{
+            text-align:center;
+            color:#1a3460;
+            font-size:28px;
+            margin-bottom: 35px;
+            padding-bottom:15px;
+            border-bottom: 2px solid #1a3460;
+        }
+        .article-text{
+            font-size:18px;
+            line-height: 2.2;
+            color:#333333;
+            text-indent: 2em;
+        }
+        .article-text p{
+            margin-bottom: 22px;
+        }
+        .footer{
+            max-width:800px;
+            margin:20px auto 40px;
+            text-align:center;
+            color:#888;
+            font-size:13px;
+        }
+    </style>
+</head>
+<body>
+    <!--顶部导航栏-->
+    <div class="top-nav">
+        <div class="nav-title">证书网上查询验证平台</div>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="#">查询须知</a>
+            <a href="about.html">关于我们</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>关于我 · AI学习成长之路</h2>
+        <div class="article-text">
+            <p>时代浪潮奔涌向前，人工智能如一轮崭新朝阳，照亮了科技世界浩瀚无垠的星河。于万千追梦人之中，我有幸与AI相逢，自此开启了一段满含热爱、步履不停的漫漫求索之旅。</p>
+            <p>初识人工智能之时，于我而言它尚是一层朦胧的面纱。那些智能生成、深度学习、大模型创作的概念遥远而神秘，像藏在远山深处的风景，令人心生向往，却又不知该如何踏上前行的道路。怀揣着一份对前沿科技的好奇，我下定决心推开AI世界的大门，踏上这条充满未知的学习征途。</p>
+            <p>学习之路从无坦途。最初的日子里，我从零开始一点点汲取知识，翻看教程、练习提示词、研究图像生成与文本创作，在一次次失败的产出当中复盘得失。无数个安静的夜晚，我沉下心打磨每一条指令，调整每一处参数，在反复尝试中摸索AI创作背后的底层逻辑。也曾遇到瓶颈，也曾面对不尽人意的成果心生迷茫，但我从未停下脚步，把挫折当作成长的阶梯，将困惑化为前进的动力，在日复一日的坚持当中慢慢沉淀、悄然蜕变。</p>
+            <p>随着学习不断深入，我不再仅仅把人工智能看作一项新奇的工具，而是逐渐领悟到AI赋能创作、解放思维的深层魅力。它可以成为思想的画笔，让脑海之中天马行空的构想落地成型；亦可化作求知的伙伴，拓宽视野边界，开启无限的创造可能。在不断实操练习的过程中，我的创作思维、工程实践能力稳步提升，对于人工智能的理解也愈发深刻。</p>
+            <p>厚积终有薄发，耕耘自有收获。此站点是我通过学习AIGC而制作的内容，对于我而言，不仅是一份能力的证明，更是一路风雨兼程的见证，
+                是漫长学习旅途之中一座意义非凡的里程碑。但它并非终点，而是我奔赴更远AI征途全新的起点。</p>
+            <p>展望前路，星河辽阔。往后我将带着这份热爱与收获，继续深耕人工智能领域，不断精进自我，以所学回馈时代，在AI这片广阔的沃土之上，书写属于自己崭新的篇章。</p>
+            <p>加油！！！张亚龙。      最后一次更新：   2026.08.28 </p>
+        </div>
+    </div>
+    <div class="footer">学习演示项目 · 仅供前端代码练习</div>
+</body>
+</html>
